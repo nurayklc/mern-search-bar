@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const studentRouter = require('./routes/studentRouter')
-const db = require('./db/connectDB')
+const studentRouter = require('./server/routes/studentRouter')
+const db = require('./server/db/connectDB')
 
 // Middlewares
 app.use(cors());
