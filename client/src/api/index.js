@@ -1,9 +1,21 @@
-const axios = require('axios');
 
-const api = axios.create({
-    baseURL : 'http://localhost:3000/api'
-})
+function Api({student=[]}) {
+  
+  return (
+    <>
+      {student.map((data, index) => {
+        if (data) {
+          return (
+            <div key={index}>
+              <h1>{data.id}</h1>
+              <h1>{data.FirstName}</h1>
+            </div>
+          );
+        }
+        return null;
+      })}
+    </>
+  );
+}
 
-const getAllStudents = () => api.get(`/student`)
-
-export default getAllStudents;
+export default Api;
